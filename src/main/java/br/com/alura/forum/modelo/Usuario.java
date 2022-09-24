@@ -5,15 +5,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuario")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Usuario {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long id;
+
+	@Column
 	private String nome;
+
+	@Column
 	private String email;
+
+	@Column
 	private String senha;
 
 	@Override

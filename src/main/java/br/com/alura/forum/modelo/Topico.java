@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "topico")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,31 +20,23 @@ public class Topico {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
 	private Long id;
 
-	@Column
 	private String titulo;
 
-	@Column
 	private String mensagem;
 
-	@Column
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 
-	@Column
 	@Enumerated(EnumType.STRING )
 	private StatusTopico status = StatusTopico.NAO_RESPONDIDO;
 
 	@ManyToOne
-	@Column
 	private Usuario autor;
 
 	@ManyToOne
-	@Column
 	private Curso curso;
 
-	@Column
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 

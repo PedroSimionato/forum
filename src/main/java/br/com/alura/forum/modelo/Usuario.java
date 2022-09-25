@@ -1,9 +1,6 @@
 package br.com.alura.forum.modelo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Usuario {
 
 	@Id
@@ -55,3 +53,4 @@ public class Usuario {
 	}
 
 }
+
